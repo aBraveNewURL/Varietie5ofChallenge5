@@ -7,7 +7,77 @@ document.getElementById("theDate").innerHTML = theDate;
 
 
 
+
+
+
+
+
+
 //*manages local or session storage feature
+
+var saveBtn = document.querySelector(".saveBtn");
+
+
+
+$('.saveBtn').on("click", function(){
+
+    var describeEl = $(this).siblings('.description').text();
+   var hourEl = $(this).siblings('.hour').text();
+   localStorage.setItem('description',describeEl);
+   localStorage.setItem('hour',hourEl);
+
+   var currentData = $('body').html();
+   
+   if (localStorage.getItem('.hour', describeEl) != currentData) {
+    localStorage.getItem('.hour',describeEl);
+    renderStored();
+}
+});
+
+function renderStored() {
+    localStorage.getItem("hour");
+    localStorage.getItem("description");
+};
+renderStored();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $
 // var storeIt = document.getElementById(".description").innerHTML;  
 // localStorage.setItem("storeIt",JSON.stringify(storeIt));
 
@@ -18,51 +88,3 @@ document.getElementById("theDate").innerHTML = theDate;
 // jQuery('saveBtn').click(function() {
 
 // });
-
-
-$(document).ready(function(){
-    var stored = $('saveBtn').prev();
-    
-    console.log(stored);
-    
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //$("#desc9").html("<textarea id='test' rows='4' cols='100' />"); IDEA: Can also set to input type="text"
-    //$('#test').val('stuff here');
-    //event.stopPropagation();
-
-// $("#desc9").click(function() {
-//     console.log("clicked");
-
-
-// })
