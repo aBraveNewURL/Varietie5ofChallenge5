@@ -5,19 +5,27 @@ console.log(m.toString());
 var theDate = moment().format('LL');
 document.getElementById("theDate").innerHTML = theDate;
 
+
+
 //*manages local or session storage feature
-var storeIt = document.getElementById().innerHTML;  
-localStorage.setItem("storeIt",JSON.stringify(storeIt));
+// var storeIt = document.getElementById(".description").innerHTML;  
+// localStorage.setItem("storeIt",JSON.stringify(storeIt));
 
-var retrieveIt = localStorage.getItem("storeIt");
-console.log("retrieveIt: ", JSON.parse(retrieveIt));
+// var retrieveIt = localStorage.getItem("storeIt");
+// console.log("retrieveIt: ", JSON.parse(retrieveIt));
 
-localStorage.setItem('btn*', 'desc*');
-jQuery('saveBtn').click(function() {
+// localStorage.setItem('btn*', 'desc*');
+// jQuery('saveBtn').click(function() {
+
+// });
 
 
+$(document).ready(function(){
+    var stored = $('saveBtn').prev();
+    
+    console.log(stored);
+    
 });
-
 
 
 
