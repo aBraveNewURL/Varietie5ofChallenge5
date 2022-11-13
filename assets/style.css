@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 textarea {
@@ -40,15 +40,15 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  margin-right: 20px;
+  /* margin-top: auto; */
 }
 
 .description {
-  width: 85%;
+  /* width: 85%; */
   white-space: pre-wrap;
-  caret-color: #06aed5;
+  /* caret-color: #06aed5;
   padding-left: 5px;
-  height: 80px;
+  height: 80px; */
 }
 
 .saveBtn {
@@ -78,4 +78,5 @@ textarea {
 .saveBtn:hover {
   font-size: 20px;
   transition: all 0.1s ease-in-out;
+
 }
