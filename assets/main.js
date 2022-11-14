@@ -23,16 +23,17 @@ setColor = () => {
         }
     });
 };
-setColor();
 
 
 let saveButton = $('.saveBtn');
-saveButton.on('click', (event) => {
-    event.preventDefault()
-    let time1 = $(this).parent().parent().data('time')
-    let descriptionBox = $(this).siblings('.description').val();
-    localStorage.setItem('time', time1);
-    localStorage.setItem('description', descriptionBox)
+$(saveButton).on('click', function() {
+    event.preventDefault();
+    // let time1 = $(this).parent().parent().data('time');
+    // let descriptionBox = $(this).siblings('.description').val();
+    let time = $(this).parent().data('time');
+    let description = $(this).siblings('.description').val();
+    localStorage.setItem('time', time);
+    localStorage.setItem('description', description);
 });
 
 
@@ -40,22 +41,24 @@ renderStored = () => {
 
     let descriptionInput = $('.description');
     descriptionInput.each(function () {
-        console.log('descriptionInput= ' + descriptionInput)
+       
 
 
         let time2 = $(this).siblings('.hour')
-        console.log('time2= ' + time2)
+      
 
         let timeStored = localStorage.getItem('time');
-        console.log('timeStored= ' + timeStored)
+      
 
 
         let textStored = localStorage.getItem('description');
-        console.log('textStored= ' + textStored)
+      
         if (timeStored === time2) {
             textStored.textContent.$(this)
             console.log(textStored.textContent.$(this))
 
+        } else {
+            console.log("Nothing yet")
         }
     })
 };

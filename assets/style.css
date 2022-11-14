@@ -28,6 +28,14 @@ textarea {
   font-size: 20px;
 }
 
+.description {
+  /* width: 85%; */
+  white-space: pre-wrap;
+  caret-color: #06aed5;
+  /* padding-left: 5px;
+  height: 80px; */
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -53,13 +61,7 @@ textarea {
   background-color: #77dd77;
   color: white;
 }
-.description {
-  /* width: 85%; */
-  white-space: pre-wrap;
-  caret-color: #06aed5;
-  /* padding-left: 5px;
-  height: 80px; */
-}
+
 
 .saveBtn {
   border-left: 1px solid black;
