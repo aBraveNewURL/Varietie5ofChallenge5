@@ -3,96 +3,49 @@ let mHours = moment().hours();
 let past;
 let present;
 let future;
-
-//manages the time-block section
-var theDate = moment().format('LL');
-document.getElementById("theDate").innerHTML = theDate;
-
-//manages local or session storage feature
-
+let timeBlocks = $('.container');
+let timeBlockRow = $('.time-block');
 let saveBtn = $('.saveBtn');
 
-$('.saveBtn').on("click", function () {
-    var currentData = $('body').html();
-    var describeEl = $(this).siblings('.description').text();
-    var hourEl = $(this).siblings('.hour').text();
-    localStorage.setItem(hourEl, describeEl);
-    localStorage.setItem('description', describeEl);
-    localStorage.setItem('hour', hourEl);
+//manages the time-block section
+let theDate = moment().format('LL');
+// document.getElementById('theDate').innerHTML = theDate;
 
-    
+// $('.saveBtn').on('click', () => {
+//     let currentData = $('body').html();
+//     let describeEl = $(this).siblings('.description').text();
+//     let hourEl = $(this).siblings('.hour').text();
+//     localStorage.setItem(hourEl, describeEl);
+//     localStorage.setItem('description', describeEl);
+//     localStorage.setItem('hour', hourEl);
 
-    if (localStorage.getItem('.hour', describeEl) != currentData) {
-        localStorage.getItem('.hour', describeEl);
-        renderStored();
-    }
-});
-
-function renderStored() {
-    var gotHour = localStorage.getItem("hour");
-    var gotDescription = localStorage.getItem("description");
-
-
-    // $('.description').eq(0).text(gotDescription);
-    // $('.hour').eq(0).text(gotHour);
-};
-renderStored();
-
-
-console.log("The time is "+ mHours);
-
-function colorize() {
-    if (document.getElementById(row10).innerHTML > mHours){
-        console.log("Not quite yet");
-    } else if (document.getElementById("row10").innerHTML < mHours){
-        console.log("It's not time yet")
-    } else if (document.getElementById("row10").innerHTML === mHours){
-        console.log("That is this hour")
-    }
-} ;
-colorize();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $
-// var storeIt = document.getElementById(".description").innerHTML;
-// localStorage.setItem("storeIt",JSON.stringify(storeIt));
-
-// var retrieveIt = localStorage.getItem("storeIt");
-// console.log("retrieveIt: ", JSON.parse(retrieveIt));
-
-// localStorage.setItem('btn*', 'desc*');
-// jQuery('saveBtn').click(function() {
-
+//     if (localStorage.getItem('.hour', describeEl) != currentData) {
+//         localStorage.getItem('.hour', describeEl);
+//         renderStored();
+//     }
 // });
+
+// function renderStored() {
+//     let gotHour = localStorage.getItem("hour");
+//     let gotDescription = localStorage.getItem("description");
+// };
+// renderStored();
+
+console.log("The time is " + mHours);
+
+function setColor() {
+    let currentHour = moment().hour()
+    timeBlockRow.each(function () {
+        let timeSlot = parseInt($(this).data('time'));
+        if (currentHour === timeSlot) {
+            $(this).addClass(present)
+        } else if (currentHour > timeSlot) {
+            $(this).addClass(past)
+        }
+        else {
+            $(this).addClass(future)
+        }
+    });
+};
+
+setColor();
