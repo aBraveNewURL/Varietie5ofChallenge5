@@ -1,5 +1,5 @@
 const m = moment();
-let mHours = moment().hours();
+let todayDate = moment().format('dddd, MMMM Do');
 let past;
 let present;
 let future;
@@ -7,9 +7,7 @@ let timeBlocks = $('.container');
 let timeBlockRow = $('.time-block');
 let saveBtn = $('.saveBtn');
 
-//manages the time-block section
-let theDate = moment().format('LL');
-// document.getElementById('theDate').innerHTML = theDate;
+$('#currentDay').text(todayDate);
 
 // $('.saveBtn').on('click', () => {
 //     let currentData = $('body').html();
@@ -31,19 +29,19 @@ let theDate = moment().format('LL');
 // };
 // renderStored();
 
-console.log("The time is " + mHours);
+// console.log("The time is " + theDate);
 
 function setColor() {
-    let currentHour = moment().hour()
+    let currentHour = moment().hour();
     timeBlockRow.each(function () {
-        let timeSlot = parseInt($(this).data('time'));
-        if (currentHour === timeSlot) {
-            $(this).addClass(present)
-        } else if (currentHour > timeSlot) {
-            $(this).addClass(past)
+        let blockHour = parseInt($(this).data('time'));
+        if (currentHour === blockHour) {
+            $(this).addClass('present')
+        } else if (currentHour > blockHour) {
+            $(this).addClass('past')
         }
         else {
-            $(this).addClass(future)
+            $(this).addClass('future')
         }
     });
 };
