@@ -9,27 +9,28 @@ let timeBlockRow = $('.time-block');
 $('#currentDay').text(todayDate);
 
 setColor = () => {
+    // TODO -- loop this for each block?
     let currentHour = moment().hour();
     console.log("The hour is " + currentHour);
     timeBlockRow.each(function () {
         let blockHour = parseInt($(this).data('time'));
-        if (currentHour === blockHour) {
-            $(this).addClass('present')
-        } else if (currentHour > blockHour) {
+        if (currentHour > blockHour) {
             $(this).addClass('past')
+        } else if (currentHour === blockHour) {
+            $(this).addClass('present')
         }
         else {
             $(this).addClass('future')
         }
     });
 };
-
+setColor();
 
 renderStored = () => {
-
+    // TODO -- loop this for each hour?
     let descriptionInput = $('.description');
     descriptionInput.each(function () {
-
+        
         let time2 = $(this).parent('.hour')
 
         let timeStored = localStorage.getItem('time');
@@ -46,8 +47,7 @@ renderStored();
 let saveButton = $('.saveBtn');
 $(saveButton).on('click', function () {
     event.preventDefault();
-    // let time1 = $(this).parent().parent().data('time');
-    // let descriptionBox = $(this).siblings('.description').val();
+    // TODO -- loop this for each hour?
     let time1 = $(this).parent().parent().data('time');
     let description = $(this).siblings('.description').val();
     localStorage.setItem('time', time1);
