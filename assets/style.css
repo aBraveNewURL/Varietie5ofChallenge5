@@ -29,11 +29,8 @@ textarea {
 }
 
 .description {
-  /* width: 85%; */
   white-space: pre-wrap;
   caret-color: #06aed5;
-  /* padding-left: 5px;
-  height: 80px; */
 }
 
 .row {
