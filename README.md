@@ -1,5 +1,5 @@
-<p align="center">
-# Work Day Scheduler </p>
+#<p align="center">
+Work Day Scheduler </p>
   
 ### This is our fifth assignment focusing on leveraging moment.js and jQuery for a simple yet practical "To Do List" for daily task organization
 
