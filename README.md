@@ -1,7 +1,6 @@
-#<p align="center">
-Work Day Scheduler </p>
+# Work Day Scheduler
   
-### This is our fifth assignment focusing on leveraging moment.js and jQuery for a simple yet practical "To Do List" for daily task organization
+### Our fifth challenge focuses on leveraging moment.js and jQuery to create a simple yet practical "To Do List" for daily tasks
 
 #### Simply add your task to whichever time slot is pertinent, hit the Save button on the right and you're all set!
 
