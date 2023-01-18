@@ -1,4 +1,4 @@
-# Work Day Scheduler
+# Workday Scheduler
   
 ### Our fifth challenge focuses on leveraging moment.js and jQuery to create a simple yet practical "To Do List" for daily tasks
 
