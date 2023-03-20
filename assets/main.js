@@ -52,5 +52,3 @@ $(saveButton).on('click', function () {
     localStorage.setItem('description', description);
 });
 
-
-
